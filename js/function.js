@@ -52,14 +52,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener("DOMContentLoaded", function() {
 	let swiper = new Swiper(".swiper-container", {
-		slidesPerView: 5, // 1度に5つ表示
-		slidesPerGroup: 5, // 5つずつスライド
-		spaceBetween: 20, // スライド間のスペース
+		slidesPerView: 2,
+		slidesPerGroup: 2,
+		spaceBetween: 10, // ← デフォルト値を入れておく
 		loop: true,
-		loopedSlides: 5, // ページネーションがズレないようにする
 		autoplay: {
-			delay: 3000, // 3000msごとに自動スライド
-			disableOnInteraction: false // ユーザー操作後も自動再開
+			delay: 3000,
+			disableOnInteraction: false
 		},
 		navigation: {
 			nextEl: ".swiper-button-next",
@@ -68,35 +67,52 @@ document.addEventListener("DOMContentLoaded", function() {
 		pagination: {
 			el: ".swiper-pagination",
 			clickable: true,
-			type: "bullets", // 丸いドットのページネーション
-			dynamicBullets: false // 動的なページネーションをオフ
+			type: "bullets",
+			dynamicBullets: false
 		},
 		breakpoints: {
-			1024: { slidesPerView: 5, slidesPerGroup: 5 },
-			768: { slidesPerView: 3, slidesPerGroup: 3 },
-			480: { slidesPerView: 2, slidesPerGroup: 2 }
+			1024: { slidesPerView: 5, slidesPerGroup: 5, spaceBetween: 20 },
+			768: { slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 10 },
+			480: { slidesPerView: 2, slidesPerGroup: 2, spaceBetween: 2 } // ← ここで上書き
 		}
 	});
-
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    const tabs = document.querySelectorAll(".tab");
-    const watchItems = document.querySelectorAll(".watch-item");
+document.addEventListener("DOMContentLoaded", function() {
+	const tabs = document.querySelectorAll(".tab");
+	const watchItems = document.querySelectorAll(".watch-item");
 
-    tabs.forEach(tab => {
-        tab.addEventListener("click", function () {
-            // すべてのタブの active クラスを削除
-            tabs.forEach(t => t.classList.remove("active"));
-            this.classList.add("active");
+	tabs.forEach(tab => {
+		tab.addEventListener("click", function() {
+			// すべてのタブの active クラスを削除
+			tabs.forEach(t => t.classList.remove("active"));
+			this.classList.add("active");
 
-            // すべてのコンテンツを非表示にする
-            watchItems.forEach(item => item.classList.remove("active"));
+			// すべてのコンテンツを非表示にする
+			watchItems.forEach(item => item.classList.remove("active"));
 
-            // クリックしたタブの data-target に対応する要素を表示
-            const targetId = this.getAttribute("data-target");
-            document.getElementById(targetId).classList.add("active");
-        });
-    });
+			// クリックしたタブの data-target に対応する要素を表示
+			const targetId = this.getAttribute("data-target");
+			document.getElementById(targetId).classList.add("active");
+		});
+	});
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+		anchor.addEventListener("click", function(e) {
+			e.preventDefault();
+			const targetId = this.getAttribute("href").substring(1);
+			const targetElement = document.getElementById(targetId);
+
+			if (targetElement) {
+				targetElement.scrollIntoView({
+					behavior: "smooth",
+					block: "start"
+				});
+			}
+		});
+	});
+});
+

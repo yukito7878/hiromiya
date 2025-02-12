@@ -1,29 +1,3 @@
-/* Hero1 セクション */
-.hero1 {
-	display: flex;
-	justify-content: center;
-	/* 横方向の中央揃え */
-	align-items: center;
-	/* 縦方向の中央揃え */
-	text-align: center;
-	/* テキストを中央揃え */
-	background-color: #f8f9fa;
-	/* 背景色（必要に応じて変更） */
-}
-
-.hero1 h1 {
-	font-size: 2rem;
-	/* 指定された文字サイズ */
-	line-height: 1.8;
-	/* 行間を調整 */
-	color: #000;
-	/* テキスト色（必要に応じて変更） */
-}
-
-.hero1__red {
-	color: red;
-	/* 強調するテキストの色 */
-}
 
 .heroParent {
 	background-color: white;
@@ -32,7 +6,6 @@
 /* Hero2 セクション */
 .hero2 {
 	display: flex;
-	max-width: 1200px;
 	/* 最大横幅を指定 */
 	margin: 0 auto;
 	/* セクションを中央揃え */

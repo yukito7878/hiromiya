@@ -1,161 +1,165 @@
-.purchase-step {
-	justify-content: center;
-	/* 横方向の中央揃え */
-	align-items: center;
-	/* 縦方向の中央揃え */
-	text-align: center;
-	/* テキストを中央揃え */
-	padding: 20px 0;
-	/* 余白を追加 */
-	padding-bottom: 50px;
-}
-
-.purchase-step .purchase-step__title {
-	font-size: 2rem;
-	/* 指定された文字サイズ */
-	line-height: 1.8;
-	/* 行間を調整 */
-	margin-top: 50px;
-	color: #000;
-	/* テキスト色（必要に応じて変更） */
-}
-
-.purchase-step img {
-	max-width: 1200px;
-	/* 最大幅を指定 */
+/* 全体のコンテナ */
+.steps {
 	width: 100%;
-	/* 画面サイズに応じて縮小 */
-	height: auto;
-	/* アスペクト比を維持 */
-	margin-bottom: 50px;
-	display: block;
-	margin: auto;
+	background-color: #fff;
+	padding: 20px;
+	box-sizing: border-box;
+	text-align: center;
 }
 
-.purchase-step .purchase-step__button {
-	display: inline-block;
+/* PC版は横並び、スマホは縦並び */
+.step-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+}
+
+.step {
+	width: 250px;
+	/* PCでは3～4個横並びにするため */
+	padding: 20px;
+	background: white;
+	border-radius: 8px;
+	text-align: center;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	gap: 5px;
+}
+
+/* STEP番号 */
+.step h2 {
+	display: flex;
+	font-size: 22px;
+	color: black;
+	margin: auto;
+	margin-top: auto;
+	justify-content: center;
+	gap: 10px;
+}
+
+.step h2 .step__number {
+	display: block;
+	color: #a06e00;
+	font-size: 30px;
+	font-weight: bold;
+	margin-top: auto;
+}
+
+/* 各STEPの中身（PCは縦並び、スマホは横並び） */
+.step__items {
+	display: flex;
+	flex-direction: column;
+	/* PCでは縦並び */
+	align-items: center;
+	gap: 10px;
+}
+
+/* 画像 */
+.step img {
+	width: 100%;
+	border-radius: 8px;
+}
+
+/* ステップ説明 */
+.step p {
+	font-size: 1.3rem;
+	color: black;
+	margin: 10px 0;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+
+/* 矢印（PC版のみ表示） */
+.arrow {
+	font-size: 30px;
+	color: #000;
+	font-weight: bold;
+}
+
+.purchase__button-bottom {
+	display: none;
+}
+
+/* ボタンの基本スタイル */
+.purchase-step__button {
+	display: block;
 	background-color: #c23b3b;
 	/* 赤色 */
 	color: #fff;
 	/* 白文字 */
-	font-size: 2rem;
+	font-size: 1.8rem;
 	font-weight: bold;
-	padding: 20px 20px;
+	padding: 15px 30px;
 	border: none;
 	border-radius: 5px;
-	/* 角を丸める */
+	text-align: center;
 	cursor: pointer;
 	text-decoration: none;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	/* 軽いシャドウ */
 	transition: background-color 0.3s ease, transform 0.2s ease;
-	margin-top: 50px;
+	margin: 40px auto 0;
+	/* 上に余白を作って、中央配置 */
+	width: fit-content;
+	/* ボタンサイズをテキストに合わせる */
 }
 
+/* ホバー時のエフェクト */
+.purchase-step__button:hover {
+	background: #a83232;
+	transform: scale(1.05);
+}
+
+.step__item p {
+	font-size: 1rem;
+}
+
+/* 📌 PC版: stepsの中央下に配置 */
 .steps {
-	display: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
 }
 
-/* ステップ全体のコンテナ */
+/* --- 📱 スマホ用のレイアウト調整 --- */
 @media (max-width: 768px) {
-	.purchase-step {
+	.step-container {
+		flex-direction: column;
+		/* 縦並び */
+	}
+
+	.step {
+		width: 90%;
+		/* 画面幅いっぱいに */
+		padding: 10px;
+		margin: auto;
+	}
+
+	.step__items {
+		width: 100%;
+		justify-content: center;
+		flex-direction: row;
+		gap: 20px;
+	}
+
+	.step__items img {
+		width: 50%;
+	}
+
+	.arrow {
+		display: none;
+		/* スマホでは矢印非表示 */
+	}
+
+	.purchase-step__button {
 		display: none;
 	}
 
-	.steps {
+	.purchase__button-bottom {
 		display: block;
-		width: 100%;
-		background-color: #fff;
-		padding: 20px;
-		box-sizing: border-box;
-		text-align: center;
-	}
+		font-size: 1.2rem;
+		padding: 7px;
 
-	/* 各ステップ */
-	.step {
-		text-align: center;
-		color: #fff;
-		margin-bottom: 20px;
-		padding: 10px;
-		padding-bottom: 20px;
-		border-radius: 8px;
-		position: relative;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-		/* 枠全体に影 */
-	}
-
-	/* ステップ番号 */
-	.step h2 {
-		font-size: 24px;
-		margin-bottom: 10px;
-		padding: 0 !important;
-		color: black;
-	}
-
-	.step h2 p.step__number {
-		display: inline-block;
-		color: #a06e00;
-		font-size: 30px;
-		font-weight: bold;
-	}
-
-	.step .step__item .step__item-description {
-		margin-top: 10px;
-	}
-
-	.step .purchase__button-bottom {
-		background-color: #c23b3b;
-		font-size: 1rem;
-		padding: 10px 15px;
-		margin-bottom: 10px;
-		margin-top: 10px;
-	}
-	
-	.purchase-step__button {
-		margin: 20px auto;
-	}
-
-	/* ステップ画像 */
-	.step img {
-		width: 100%;
-		max-width: 170px;
-		border-radius: 8px;
-	}
-
-	.step .step__items {
-		display: flex;
-		gap: 10px;
-	}
-
-	/* ステップタイトル */
-	.step h3 {
-		display: inline-block;
-		width: 100%;
-		font-size: 22px;
-		color: black;
-		padding-top: 10px;
-		padding-bottom: 10px;
-		border-radius: 2px;
-		font-weight: bold;
-		margin: 10px 0;
-		background-color: white;
-	}
-
-	/* ステップ説明文 */
-	.step p {
-		font-size: 18px;
-		font-weight: bold;
-		margin: 0;
-		color: black;
-	}
-
-	/* 矢印 */
-	.arrow {
-		width: 0;
-		height: 0;
-		border-left: 15px solid transparent;
-		border-right: 15px solid transparent;
-		border-top: 20px solid #f4cccc;
-		margin: 0 auto 20px auto;
 	}
 }

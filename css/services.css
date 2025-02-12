@@ -18,6 +18,7 @@
     font-size: 1.5rem;
     color: #555;
     margin-bottom: 30px;
+	margin-top: 0;
 }
 
 .service-container {
@@ -57,7 +58,7 @@
 }
 
 .service-item__title {
-    font-size: 20px;
+    font-size: 28px;
     color: #333;
     margin: 15px 0 10px;
 }

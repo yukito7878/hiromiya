@@ -3,6 +3,8 @@
     max-width: 1200px;
     margin: 40px auto;
     text-align: center;
+	width: 95%;
+	margin: auto;
 }
 
 /* タイトル */
@@ -80,20 +82,32 @@
 .purchase-name {
     font-size: 1rem;
     font-weight: bold;
-    margin: 10px 0;
+    margin: 10px 0 0 0;
 }
 
 /* 買取価格ラベル */
 .purchase-price-label {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     color: #ff4d4d;
     font-weight: bold;
-    margin-top: 5px;
+    margin-top: 15px;
+	margin-bottom: 5px;
 }
 
 /* 買取価格 */
 .purchase-price {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: red;
+	margin-top: 0;
+}
+
+@media (max-width: 768px) {
+	.purchase-grid {
+	    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* 自動調整 */
+	    gap: 10px;
+	}
+	.purchase-price{
+		margin-bottom: 10px;
+	}
 }

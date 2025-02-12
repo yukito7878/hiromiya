@@ -56,7 +56,6 @@
 
 .swiper-slide {
 	padding: 0px;
-	width: 224px;
 	text-align: center;
 	padding-top: 20px;
 	background: white;
@@ -74,10 +73,15 @@
 	font-weight: bold;
 	color: red;
 	font-size: 1rem;
+	margin-top: 20px;
+	margin-bottom: 5px;
+	margin: 0;
 }
 
 .price_tag {
 	font-size: 1.5rem;
+	margin-top: 0;
+	margin-bottom: 15px;
 }
 
 .swiper-button-next,
@@ -146,3 +150,24 @@
   transform: scale(1.05); /* ちょっと大きくする */
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
+
+@media (max-width: 768px) {
+    .watch-item-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px; /* ← ここを追加 */
+    }
+
+    .step-container {
+        flex-direction: column;
+        gap: 20px; /* ← ステップ間に余白を作る */
+    }
+
+    .slider {
+        padding: 0;
+        width: 95%;
+        margin: auto;
+        gap: 20px; /* ← スライダー要素の間隔 */
+    }
+}
+

@@ -10,6 +10,7 @@
 	background-color: white;
 }
 
+
 /* コンテナ */
 .header-container {
 	display: flex;
@@ -55,6 +56,34 @@
 	background-color: #333;
 	border-radius: 2px;
 	transition: transform 0.3s, opacity 0.3s;
+}
+
+.ads {
+	display: flex;
+	justify-content: center;
+	/* 中央揃え */
+	align-items: center;
+	/* 縦方向も中央揃え */
+	max-width: 100%;
+	background-color: #fff;
+	margin: 1.5rem auto;
+}
+
+.ads .ads__hiromi {
+	display: flex;
+	justify-content: center;
+	/* 横方向の中央揃え */
+	align-items: center;
+	/* 縦方向の中央揃え */
+	width: 100%;
+	height: 100%;
+}
+
+.ads__hiromi-hiromi {
+	max-width: 100%;
+	/* 親要素の幅に合わせる */
+	height: auto;
+	/* アスペクト比を保つ */
 }
 
 .nav {
