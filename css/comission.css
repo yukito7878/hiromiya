@@ -46,7 +46,7 @@
 /* 「0円」部分 */
 .zero-price-img {
 	max-width: 300px;
-	
+	margin-bottom: 50px;
 }
 
 /* 0のスタイル */
@@ -68,6 +68,5 @@
 	.zero-price-img {
 		max-width: 200px;
 		margin: auto;
-		margin-bottom: 50px;
 	}
 }
