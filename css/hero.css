@@ -19,6 +19,8 @@
 	/* 親要素の幅に合わせる */
 	overflow: hidden;
 	/* 子要素がはみ出さないようにする */
+	max-width: 1200px;
+	margin: auto;
 }
 
 .hero2__image-container img {

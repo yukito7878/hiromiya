@@ -18,6 +18,11 @@
 	/* 中央揃え */
 }
 
+.slide-image{
+	width: 100px;
+	height: 100px;
+}
+
 /* h2タグの中央揃え */
 .swiper-title {
 	text-align: center;
@@ -119,6 +124,12 @@
 	left: 50%;
 	transform: translateX(-50%);
 	z-index: 10;
+}
+
+.price-title{
+	font-weight: bold;
+	padding: 5px;
+	font-size: 17px;
 }
 
 .gold_price-button {
