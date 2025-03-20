@@ -93,6 +93,7 @@
 	width: 90%;
 	margin: auto
 }
+
 /* 買取価格表のデザイン */
 table {
 	width: 100%;
@@ -273,33 +274,39 @@ td.price {
 
 @media (max-width: 768px) {
 
+	.accessory-price-section {
+		padding: 5px;
+	}
+
 	/* 時計アイテムのグリッド */
 	.watch-item-grid {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 	}
-	
+
 	.watch-price-label {
 		margin-bottom: 5px;
 		margin-top: 5px;
 	}
-	
+
 	.watch-item-list-section {
 		width: 95%;
 		margin: auto;
 	}
-	
+
 	.watch-item.active {
 		display: flex;
 		/* 横並びを維持 */
-		width: 90%;
+		width: 95%;
 		margin: auto;
 		flex-direction: column;
 	}
+
 	.watch-price-table {
 		width: 100%;
+		padding: 10px;
 	}
-	
+
 	.tab {
 		padding: 10px 2px;
 		width: 20%;
@@ -310,35 +317,36 @@ td.price {
 	.tab.active {
 		width: 32%;
 	}
-	
-	th,
+
+	.watch-title th,
 	td {
 		padding: 5px;
 		border: 1px solid #ddd;
 		text-align: left;
 		font-size: 0.8rem;
+		width: 60%;
 	}
-	
-	.watch-title{
+
+	.watch-title {
 		text-align: center;
 	}
-	
+
 	.watch-image {
 		margin: auto;
 		width: 60%;
 	}
-	
-	.accessory-price{
+
+	.accessory-price {
 		width: 95%;
 		margin: auto;
 	}
-	
+
 	.watch-item-grid {
 		gap: 10px;
 	}
-	
+
 	.watch-name {
 		font-size: 0.7rem;
 	}
-	
+
 }
