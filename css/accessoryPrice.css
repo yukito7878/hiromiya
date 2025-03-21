@@ -250,7 +250,8 @@ td.price {
 	font-size: 0.8rem;
 	color: #ff4d4d;
 	font-weight: bold;
-	margin-top: 5px;
+	margin-top: 15px;
+	margin-bottom: 0;
 }
 
 .watch-price {
