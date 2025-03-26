@@ -123,6 +123,13 @@
 }
 
 /* --- 📱 スマホ用のレイアウト調整 --- */
+
+@media (min-width: 768px) {
+	.show-only-sp {
+		display: none;
+	}
+}
+
 @media (max-width: 768px) {
 	.step-container {
 		flex-direction: column;
@@ -134,6 +141,10 @@
 		/* 画面幅いっぱいに */
 		padding: 10px;
 		margin: auto;
+	}
+
+	.show-only-pc {
+		display: none;
 	}
 
 	.step__items {

@@ -18,7 +18,7 @@
 	/* 中央揃え */
 }
 
-.slide-image{
+.slide-image {
 	width: 100px;
 	height: 100px;
 }
@@ -126,59 +126,79 @@
 	z-index: 10;
 }
 
-.price-title{
+.price-title {
 	font-weight: bold;
 	padding: 5px;
 	font-size: 17px;
 }
 
 .gold_price-button {
-  display: flex;
-  justify-content: center; /* 横方向に中央揃え */
-  align-items: center; /* 縦方向に中央揃え（必要なら） */
-  margin-top: 20px;
+	display: flex;
+	justify-content: center;
+	/* 横方向に中央揃え */
+	align-items: center;
+	/* 縦方向に中央揃え（必要なら） */
+	margin-top: 20px;
 }
 
 /* おしゃれな問い合わせボタン */
 .contact-button {
-  margin: 10px auto;
-  display: inline-block;
-  padding: 14px 24px;
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: white;
-  background: linear-gradient(45deg, #ff4e50, #fc913a); /* グラデーション */
-  border-radius: 30px; /* 丸みのあるボタン */
-  text-decoration: none; /* 下線を消す */
-  transition: 0.3s ease-in-out;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+	margin: 10px auto;
+	display: inline-block;
+	padding: 14px 24px;
+	font-size: 1.4rem;
+	font-weight: bold;
+	color: white;
+	background: linear-gradient(45deg, #ff4e50, #fc913a);
+	/* グラデーション */
+	border-radius: 30px;
+	/* 丸みのあるボタン */
+	text-decoration: none;
+	/* 下線を消す */
+	transition: 0.3s ease-in-out;
+	text-align: center;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* ホバー時のエフェクト */
 .contact-button:hover {
-  background: linear-gradient(45deg, #fc913a, #ff4e50); /* グラデーションの向きを変更 */
-  transform: scale(1.05); /* ちょっと大きくする */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+	background: linear-gradient(45deg, #fc913a, #ff4e50);
+	/* グラデーションの向きを変更 */
+	transform: scale(1.05);
+	/* ちょっと大きくする */
+	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
+
+@media (min-width: 768px) {
+	.show-only-sp {
+		display: none;
+	}
+}
+
 
 @media (max-width: 768px) {
-    .watch-item-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px; /* ← ここを追加 */
-    }
+	.show-only-pc {
+		display: none;
+	}
 
-    .step-container {
-        flex-direction: column;
-        gap: 20px; /* ← ステップ間に余白を作る */
-    }
+	.watch-item-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 15px;
+		/* ← ここを追加 */
+	}
 
-    .slider {
-        padding: 0;
-        width: 95%;
-        margin: auto;
-        gap: 20px; /* ← スライダー要素の間隔 */
-    }
+	.step-container {
+		flex-direction: column;
+		gap: 20px;
+		/* ← ステップ間に余白を作る */
+	}
+
+	.slider {
+		padding: 0;
+		width: 95%;
+		margin: auto;
+		gap: 20px;
+		/* ← スライダー要素の間隔 */
+	}
 }
-
